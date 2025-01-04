@@ -1,9 +1,3 @@
-# remplir_colonne_type
-Ce script Python a pour but de remplir les valeurs manquantes dans la première colonne d'un fichier Excel avec la valeur précédente de la colonne. Cela est particulièrement utile pour les tableaux où certaines cellules de la première colonne sont vides mais devraient contenir la même valeur que la cellule précédente.
-## 2025-01-02 21h29
-J'ai créé un script Python pour remplir les trous dans la colonne "Type" de votre tableau. Voici le script :
-
-```python
 import pandas as pd
 from io import StringIO
 
@@ -68,6 +62,3 @@ df['Type'] = df['Type'].fillna(method='ffill')
 
 # Afficher le DataFrame mis à jour
 print(df)
-```
-
-Ce script lit les données fournies dans un DataFrame, puis remplit les valeurs manquantes dans la colonne "Type" avec la valeur précédente de la colonne. Vous pouvez exécuter ce script pour obtenir le tableau mis à jour. Si vous avez besoin d'aide supplémentaire, n'hésitez pas à demander !
