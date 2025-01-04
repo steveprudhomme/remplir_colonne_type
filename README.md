@@ -1,10 +1,48 @@
-# remplir_colonne_type
+# Remplir Colonne Type
+
+## Description
+
 Ce script Python a pour but de remplir les valeurs manquantes dans la première colonne d'un fichier Excel avec la valeur précédente de la colonne. Cela est particulièrement utile pour les tableaux où certaines cellules de la première colonne sont vides mais devraient contenir la même valeur que la cellule précédente.
+
+## Fonctionnement
+
+Le script charge un fichier Excel, remplit les valeurs manquantes dans la première colonne avec la valeur précédente, puis sauvegarde le tableau mis à jour dans un nouveau fichier Excel.
+
+## Origine du Fichier Excel
+
+Le fichier Excel utilisé dans ce script provient du **Catalogue Exotica** de Breakthrough Listen, un projet de recherche de l'Université de Californie à Berkeley. Le Catalogue Exotica est une collection de plus de 700 objets célestes distincts, visant à inclure "un de chaque" type d'objet astronomique connu. Il comprend des exemples de chaque type dans l'échantillon Prototype, des objets extrêmes avec des propriétés record dans l'échantillon Superlative, et des cibles énigmatiques dans l'échantillon Anomaly.
+
+Le fichier Excel a été extrait du code source de l'article scientifique "One of Everything: The Breakthrough Listen Exotica Catalog" disponible sur arXiv. La conversion du tableau LaTeX en fichier Excel a été réalisée à l'aide du convertisseur en ligne disponible sur TableConvert.
+
+## Prérequis
+
+- Python 3.x
+- Pandas
+- Openpyxl
+
+## Installation des prérequis
+
+Pour installer Python, vous pouvez le télécharger et l'installer depuis le site officiel : Python.org.
+
+Pour installer les bibliothèques nécessaires, vous pouvez utiliser `pip` :
+
+```bash
+pip install pandas openpyxl
+```
+## Médiagraphie
+
+Breakthrough Listen. (n.d.). Exotic Target Catalog. Récupéré de http://seti.berkeley.edu/exotica/
+Lacki, B. C., Lebofsky, M., Isaacson, H., Siemion, A., Sheikh, S., Croft, S., ... & Werthimer, D. (2020). One of Everything: The Breakthrough Listen Exotica Catalog. arXiv. Récupéré de https://arxiv.org/pdf/2006.11304.pdf
+Python Software Foundation. (2023). Pandas documentation. Repéré le 4 janvier 2025 à https://pandas.pydata.org/pandas-docs/stable/
+Python Software Foundation. (2023). Openpyxl documentation. Repéré le 4 janvier 2025 à https://openpyxl.readthedocs.io/en/stable/
+TableConvert. (n.d.). Convert LaTeX Table to Excel Online. Récupéré de https://tableconvert.com/latex-to-excel
+
 ## Journal des modifications
 ### 2025-01-02 21h35
 Il semble que le script ait rencontré une erreur car la colonne "Type" n'a pas été trouvée dans le fichier Excel. J'ai ajusté le script pour qu'il fonctionne correctement avec votre fichier. Voici le script mis à jour :
 
 ```python
+
 import pandas as pd
 
 # Charger le fichier Excel
@@ -55,7 +93,7 @@ df.to_excel(output_file_path, index=False)
 print(f"Le tableau mis à jour a été sauvegardé dans {output_file_path}.")
 ```
 
-Ce script charge le fichier Excel, affiche les premières lignes pour vérifier les colonnes, remplit les valeurs manquantes dans la colonne "Type" avec la valeur précédente, puis sauvegarde le tableau mis à jour dans un nouveau fichier Excel.
+
 
 ### 2025-01-02 21h29
 J'ai créé un script Python pour remplir les trous dans la colonne "Type" de votre tableau. Voici le script :
