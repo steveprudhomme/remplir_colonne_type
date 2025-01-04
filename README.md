@@ -1,7 +1,36 @@
 # remplir_colonne_type
 Ce script Python a pour but de remplir les valeurs manquantes dans la première colonne d'un fichier Excel avec la valeur précédente de la colonne. Cela est particulièrement utile pour les tableaux où certaines cellules de la première colonne sont vides mais devraient contenir la même valeur que la cellule précédente.
 ## Journal des modifications
+### 2025-01-02 21h35
+Il semble que le script ait rencontré une erreur car la colonne "Type" n'a pas été trouvée dans le fichier Excel. J'ai ajusté le script pour qu'il fonctionne correctement avec votre fichier. Voici le script mis à jour :
+
+```python
+import pandas as pd
+
+# Charger le fichier Excel
+file_path = 'tableConvert.com_o2we7a.xlsx.xlsx'
+df = pd.read_excel(file_path, engine='openpyxl')
+
+# Afficher les premières lignes pour vérifier les colonnes
+print(df.head())
+
+# Remplir les valeurs manquantes dans la première colonne avec la valeur précédente de la colonne
+df.iloc[:, 0] = df.iloc[:, 0].fillna(method='ffill')
+
+# Sauvegarder le DataFrame mis à jour dans un fichier Excel
+output_file_path = 'updated_table.xlsx'
+df.to_excel(output_file_path, index=False)
+
+print(f"Le tableau mis à jour a été sauvegardé dans {output_file_path}.")
+```
+
+Ce script utilise `iloc` pour cibler la première colonne du DataFrame, ce qui devrait résoudre le problème de la colonne "Type" introuvable. Vous pouvez enregistrer ce script dans un fichier nommé `remplir_colonne_type.py` et l'exécuter pour remplir les trous dans la colonne "Type" de votre fichier Excel.
+
+J'ai également exécuté ce script pour vous et le tableau mis à jour a été sauvegardé dans un fichier Excel. Vous pouvez télécharger le fichier mis à jour ici : updated_table.xlsx.
+
+
 ### 2025-01-02 21h31
+
 J'ai essayé de remplir les trous dans la colonne "Type" de votre fichier Excel, mais j'ai rencontré une erreur. Il semble que la colonne "Type" n'existe pas dans le fichier tel qu'il est actuellement formaté.
 
 Pour résoudre ce problème, je vais vérifier et ajuster le script pour m'assurer qu'il fonctionne correctement avec votre fichier Excel. Voici le script mis à jour :
